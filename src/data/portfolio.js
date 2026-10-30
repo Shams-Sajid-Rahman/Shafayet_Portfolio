@@ -38,8 +38,8 @@ export const profile = {
   email: 'arikshafact@gmail.com',
   phone: '+880 1922 289602',
   phoneHref: 'tel:+8801922289602',
-  linkedin: 'https://www.linkedin.com/in/md-shafayet-ullah',
-  linkedinLabel: 'linkedin.com/in/md-shafayet-ullah',
+  linkedin: 'https://www.linkedin.com/in/md-shafayet-ullah-01a017413/',
+  linkedinLabel: 'linkedin.com/in/md-shafayet-ullah-01a017413',
   // Place your CV PDF at /public/Md_Shafayet_Ullah_CV.pdf
   resumeUrl: '/Md_Shafayet_Ullah_CV.pdf',
   // Profile photo shown in the About section (stored in /public/images)
