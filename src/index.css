@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Base ---------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor jumps so the sticky navbar doesn't cover section headings */
+    scroll-padding-top: 5rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-ink-50 font-sans text-ink-800 antialiased transition-colors duration-300;
+    @apply dark:bg-ink-950 dark:text-ink-200;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-helix-400/30 text-ink-900 dark:text-white;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-helix-500 ring-offset-2 ring-offset-ink-50 dark:ring-offset-ink-950;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ---------- Custom scrollbar ---------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #05c4a4 transparent;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1ee0bd, #057e6e);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #05c4a4;
+  background-clip: padding-box;
+}
+
+/* ---------- Reusable components ---------- */
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply relative py-20 sm:py-24 lg:py-28;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ink-200/80 bg-white/70 backdrop-blur-sm transition-all duration-300;
+    @apply dark:border-white/[0.07] dark:bg-ink-900/60;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-1 hover:border-helix-400/50 hover:shadow-glow;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200;
+    @apply disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  /* Filled teal button: brightens, lifts and glows on hover */
+  .btn-primary {
+    @apply btn bg-helix-500 text-ink-950 shadow-lg shadow-helix-500/20;
+    @apply hover:-translate-y-0.5 hover:bg-gradient-to-r hover:from-helix-400 hover:to-cyan-400 hover:shadow-xl hover:shadow-helix-400/40 active:translate-y-0 active:scale-[0.98];
+  }
+
+  /* Outline button: fills with teal on hover */
+  .btn-ghost {
+    @apply btn border border-ink-300 bg-white/60 text-ink-800;
+    @apply hover:-translate-y-0.5 hover:border-helix-500 hover:bg-helix-500 hover:text-ink-950 hover:shadow-lg hover:shadow-helix-500/30 active:translate-y-0;
+    @apply dark:border-white/10 dark:bg-white/5 dark:text-ink-100 dark:hover:border-helix-400 dark:hover:bg-helix-400 dark:hover:text-ink-950;
+  }
+
+  /* Square icon-only button (socials, theme toggle, menu): fills with teal on hover */
+  .icon-btn {
+    @apply flex shrink-0 items-center justify-center rounded-xl border border-ink-200 bg-white/60 text-ink-600 transition-all duration-200;
+    @apply hover:-translate-y-0.5 hover:border-helix-500 hover:bg-helix-500 hover:text-ink-950 hover:shadow-lg hover:shadow-helix-500/30 active:translate-y-0;
+    @apply dark:border-white/10 dark:bg-white/5 dark:text-ink-300 dark:hover:border-helix-400 dark:hover:bg-helix-400 dark:hover:text-ink-950;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium;
+    @apply border-ink-200 bg-ink-100/70 text-ink-700 dark:border-white/10 dark:bg-white/5 dark:text-ink-300;
+  }
+
+  .mono-label {
+    @apply font-mono text-[11px] uppercase tracking-[0.2em] text-helix-700 dark:text-helix-400;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-helix-600 via-cyan-500 to-helix-400 bg-clip-text text-transparent;
+    @apply dark:from-helix-300 dark:via-cyan-300 dark:to-helix-500;
+  }
+
+  .input {
+    @apply w-full rounded-xl border bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-400 transition-colors;
+    @apply focus:outline-none focus:ring-2 focus:ring-helix-500/40;
+    @apply dark:bg-ink-950/60 dark:text-ink-100 dark:placeholder:text-ink-500;
+  }
+}
