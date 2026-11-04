@@ -22,6 +22,7 @@ import {
   GraduationCap,
   HeartHandshake,
   Droplet,
+  Recycle,
 } from 'lucide-react';
 
 /* ---------------- Personal info ---------------- */
@@ -35,7 +36,7 @@ export const profile = {
     'Bridging wet-lab pharmacology with computational bioinformatics, from rodent models and immunoassays to molecular docking and ADMET prediction, to accelerate the path from molecule to medicine.',
   location: 'Pallabi, Dhaka, Bangladesh',
   locationShort: 'Dhaka, Bangladesh',
-  email: 'arikshafact@gmail.com',
+  email: 'arikshafaet@gmail.com',
   phone: '+880 1922 289602',
   phoneHref: 'tel:+8801922289602',
   linkedin: 'https://www.linkedin.com/in/md-shafayet-ullah-01a017413/',
@@ -214,8 +215,7 @@ export const experiences = [
     icon: Cpu,
     role: 'In Silico Drug Discovery Study',
     org: 'Gopalganj Science and Technology University (GSTU)',
-    period: '2024 – Present',
-    current: true,
+    period: '2025',
     summary:
       'Structure-based virtual screening of candidate COX-2 inhibitors to prioritise compounds with favourable binding and drug-likeness.',
     points: [
@@ -231,8 +231,7 @@ export const experiences = [
     icon: Microscope,
     role: 'In Vivo Pharmacology Collaborations',
     org: 'Gopalganj Science and Technology University (GSTU)',
-    period: '2024 – Present',
-    current: true,
+    period: '2023',
     summary:
       'Collaborative hepatoprotective study evaluating a plant extract against drug-induced liver injury, published in Chemistry & Biodiversity.',
     points: [
@@ -264,7 +263,7 @@ export const experiences = [
     icon: Hospital,
     role: 'Clinical Laboratory Trainee',
     org: 'Institute of Nuclear Medicine and Allied Sciences (INMAS)',
-    period: '2024',
+    period: '2026',
     summary:
       'Clinical training in nuclear-medicine diagnostics with exposure to immunoassay platforms and radiation safety.',
     points: [
@@ -342,5 +341,12 @@ export const leadership = [
     role: 'Logistics Coordinator',
     org: 'Badhon Blood Movement',
     detail: 'Managed donor coordination and logistics for voluntary blood donation drives.',
+  },
+  {
+    icon: Recycle,
+    role: 'Instructor',
+    org: 'Waste To Resource (W2R)',
+    detail:
+      'Instructed waste sorting on campus and educated local communities on the importance of recycling and sustainability.',
   },
 ];

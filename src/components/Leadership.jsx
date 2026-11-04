@@ -13,7 +13,8 @@ export default function Leadership() {
           description="Communication, mentorship and community service that shape how I collaborate in research teams."
         />
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Flex-wrap keeps an uneven last row centred */}
+        <div className="flex flex-wrap justify-center gap-4">
           {leadership.map(({ icon: Icon, role, org, detail, metric }, i) => (
             <motion.article
               key={`${role}-${org}`}
@@ -21,7 +22,7 @@ export default function Leadership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="card card-hover group flex flex-col p-6"
+              className="card card-hover group flex w-full flex-col p-6 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-helix-500/20 to-violet-500/20 text-helix-700 transition-transform group-hover:scale-110 dark:text-helix-300">
                 <Icon size={20} />
